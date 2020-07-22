@@ -52,10 +52,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun displayStrengthLevel(strengthLevel: String) {
-        button.isEnabled = strengthLevel.contains("BULLETPROOF")
+    private fun displayStrengthLevel(strengthLevel: StrengthLevel) {
+        button.isEnabled = strengthLevel == StrengthLevel.BULLETPROOF
 
-        strength_level_txt.text = strengthLevel
+        strength_level_txt.text = strengthLevel.name
         strength_level_txt.setTextColor(ContextCompat.getColor(this, color))
         strength_level_indicator.setBackgroundColor(ContextCompat.getColor(this, color))
     }

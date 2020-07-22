@@ -8,7 +8,7 @@ import java.util.regex.Pattern
 
 class PasswordStrengthCalculator: TextWatcher {
 
-    var strengthLevel: MutableLiveData<String> = MutableLiveData()
+    var strengthLevel: MutableLiveData<StrengthLevel> = MutableLiveData()
     var strengthColor: MutableLiveData<Int> = MutableLiveData()
 
     var lowerCase: MutableLiveData<Int> = MutableLiveData(0)
@@ -31,23 +31,23 @@ class PasswordStrengthCalculator: TextWatcher {
     private fun calculateStrength(password: CharSequence) {
         if(password.length in 0..7){
             strengthColor.value = R.color.weak
-            strengthLevel.value = "WEAK"
+            strengthLevel.value = StrengthLevel.WEAK
         }else if(password.length in 8..10){
             if(lowerCase.value == 1 || upperCase.value == 1 || digit.value == 1 || specialChar.value == 1){
                 strengthColor.value = R.color.medium
-                strengthLevel.value = "MEDIUM"
+                strengthLevel.value = StrengthLevel.MEDIUM
             }
         }else if(password.length in 11..16){
             if(lowerCase.value == 1 || upperCase.value == 1 || digit.value == 1 || specialChar.value == 1){
                 if(lowerCase.value == 1 && upperCase.value == 1){
                     strengthColor.value = R.color.strong
-                    strengthLevel.value = "STRONG"
+                    strengthLevel.value = StrengthLevel.STRONG
                 }
             }
         }else if(password.length > 16){
             if(lowerCase.value == 1 && upperCase.value == 1 && digit.value == 1 && specialChar.value == 1){
                 strengthColor.value = R.color.bulletproof
-                strengthLevel.value = "BULLETPROOF"
+                strengthLevel.value = StrengthLevel.BULLETPROOF
             }
         }
     }
