@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/password_input"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="200dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toStartOf="@+id/strength_level_txt"
+        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/strength_level_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/password_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/password_input"
+        app:layout_constraintTop_toTopOf="@+id/password_input" />
+
+    <View
+        android:id="@+id/strength_level_indicator"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/lightGray"
+        app:layout_constraintEnd_toEndOf="@+id/strength_level_txt"
+        app:layout_constraintStart_toStartOf="@+id/password_input"
+        app:layout_constraintTop_toBottomOf="@+id/password_input" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="30dp"
+        android:enabled="false"
+        android:text="@string/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/specialChar_txt" />
+
+    <ImageView
+        android:id="@+id/lowerCase_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:tint="@color/darkGray"
+        app:layout_constraintStart_toStartOf="@+id/strength_level_indicator"
+        app:layout_constraintTop_toBottomOf="@+id/strength_level_indicator"
+        app:srcCompat="@drawable/ic_checkmark" />
+
+    <TextView
+        android:id="@+id/lowerCase_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/lowercase_letters"
+        android:textColor="@color/darkGray"
+        app:layout_constraintBottom_toBottomOf="@+id/lowerCase_img"
+        app:layout_constraintStart_toEndOf="@+id/lowerCase_img"
+        app:layout_constraintTop_toTopOf="@+id/lowerCase_img" />
+
+    <ImageView
+        android:id="@+id/upperCase_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:tint="@color/darkGray"
+        app:layout_constraintStart_toStartOf="@+id/lowerCase_img"
+        app:layout_constraintTop_toBottomOf="@+id/lowerCase_img"
+        app:srcCompat="@drawable/ic_checkmark" />
+
+    <TextView
+        android:id="@+id/upperCase_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/uppercase_letters"
+        android:textColor="@color/darkGray"
+        app:layout_constraintBottom_toBottomOf="@+id/upperCase_img"
+        app:layout_constraintStart_toEndOf="@+id/upperCase_img"
+        app:layout_constraintTop_toTopOf="@+id/upperCase_img" />
+
+    <ImageView
+        android:id="@+id/digit_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:tint="@color/darkGray"
+        app:layout_constraintStart_toStartOf="@+id/upperCase_img"
+        app:layout_constraintTop_toBottomOf="@+id/upperCase_img"
+        app:srcCompat="@drawable/ic_checkmark" />
+
+    <TextView
+        android:id="@+id/digit_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/digits"
+        android:textColor="@color/darkGray"
+        app:layout_constraintBottom_toBottomOf="@+id/digit_img"
+        app:layout_constraintStart_toEndOf="@+id/digit_img"
+        app:layout_constraintTop_toTopOf="@+id/digit_img" />
+
+    <ImageView
+        android:id="@+id/specialChar_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:tint="@color/darkGray"
+        app:layout_constraintStart_toStartOf="@+id/digit_img"
+        app:layout_constraintTop_toBottomOf="@+id/digit_img"
+        app:srcCompat="@drawable/ic_checkmark" />
+
+    <TextView
+        android:id="@+id/specialChar_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/special_characters"
+        android:textColor="@color/darkGray"
+        app:layout_constraintBottom_toBottomOf="@+id/specialChar_img"
+        app:layout_constraintStart_toEndOf="@+id/specialChar_img"
+        app:layout_constraintTop_toTopOf="@+id/specialChar_img" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
